@@ -40,6 +40,8 @@ public class PredicateJava8 {
                 .collect(Collectors.toList());
 
         System.out.println(collectS);
+        
+//In Java 11, Predicate class has new method not(). It returns a predicate that is the negation of the supplied predicate. This is accomplished by returning result of the calling predicate.negate().
 
 	}
 
