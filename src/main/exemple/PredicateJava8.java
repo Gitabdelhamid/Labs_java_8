@@ -22,6 +22,24 @@ public class PredicateJava8 {
 				.collect(Collectors.toList());
 
 		System.out.println(collectWithPredicateAnd);
+		
+		//Predicate.or()
+		
+		List<Integer> collectWithPredicateOr = list.stream().filter(noGreaterThan5.or(noLessThan8))
+				.collect(Collectors.toList());
+
+		System.out.println(collectWithPredicateOr);
+		
+		//Predicate.negate() : method returns the logical negation of existing predicate.
+	    Predicate<String> startWithA = x -> x.startsWith("A");
+
+        List<String> listS = Arrays.asList("A", "AA", "AAA", "B", "BB", "BBB");
+
+        List<String> collectS = listS.stream()
+                .filter(startWithA.negate())
+                .collect(Collectors.toList());
+
+        System.out.println(collectS);
 
 	}
 
